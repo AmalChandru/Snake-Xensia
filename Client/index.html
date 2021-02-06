@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake Xensia🐍</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Bungee);
+      #gameScreen {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="vh-100">
+      <div class="container h-100">
+        <div id="initialScreen" class="h-100">
+          <div
+            class="d-flex flex-column align-items-center justify-content-center h-100"
+          >
+            <h1
+              class="w3-container w3-center w3-animate-left"
+              style="font-family: 'Bungee'"
+            >
+              Snake Xensia!
+            </h1>
+            <br />
+            <button
+              type="submit"
+              class="btn btn-success"
+              id="newGameButton"
+              style="font-size: 24px"
+            >
+              Create New Game
+            </button>
+            <br />
+            <div style="font-family: 'Bungee'">OR</div>
+            <br />
+            <div class="form-group">
+              <input
+                type="text"
+                placeholder="Type in Game Code..."
+                id="gameCodeInput"
+              />
+            </div>
+            <br />
+            <button
+              type="submit"
+              class="btn btn-success"
+              id="joinGameButton"
+              style="font-size: 24px"
+            >
+              Join Game
+            </button>
+            <br />
+            <h1>💚 🐍</h1>
+          </div>
+        </div>
+
+        <div id="gameScreen" class="h-100">
+          <div
+            class="d-flex flex-column align-items-center justify-content-center h-100"
+          >
+            <h1 style="font-family: 'Bungee'">
+              Your game code is: <span id="gameCodeDisplay"></span>
+            </h1>
+
+            <canvas id="canvas"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
