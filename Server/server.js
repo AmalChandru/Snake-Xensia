@@ -1,17 +1,27 @@
+//importing requied instances
 const io = require("socket.io")();
-const { initGame, gameLoop, getUpdatedVelocity } = require("./game");
-const { FRAME_RATE } = require("./constants");
-const { makeid } = require("./utils");
+const {
+  gameIntialisation,
+  gameContinuation,
+  newVelocity,
+} = require("./gameLogic");
+const { frameRate } = require("./fixedValue");
+const { makeid } = require("./utilities");
 
 const state = {};
 const clientRooms = {};
 
 io.on("connection", (client) => {
-  client.on("keydown", handleKeydown);
-  client.on("newGame", handleNewGame);
-  client.on("joinGame", handleJoinGame);
+  client.on("keydown", keyDownHandler);
+  client.on("newGame", newGameHandler);
+  client.on("joinGame", joinGameHandler);
 
-  function handleJoinGame(roomName) {
+  /**
+   * Handle joining event
+   * @HandlerFunction
+   * @param {*} roomName
+   */
+  function joinGameHandler(roomName) {
     const room = io.sockets.adapter.rooms[roomName];
 
     let allUsers;
@@ -41,19 +51,26 @@ io.on("connection", (client) => {
     startGameInterval(roomName);
   }
 
-  function handleNewGame() {
+  /**
+   * Handle New Game
+   */
+  function newGameHandler() {
     let roomName = makeid(5);
     clientRooms[client.id] = roomName;
     client.emit("gameCode", roomName);
 
-    state[roomName] = initGame();
+    state[roomName] = gameIntialisation();
 
     client.join(roomName);
     client.number = 1;
     client.emit("init", 1);
   }
 
-  function handleKeydown(keyCode) {
+  /**
+   * Handle keydown events
+   * @param {*} keyCode
+   */
+  function keyDownHandler(keyCode) {
     const roomName = clientRooms[client.id];
     if (!roomName) {
       return;
@@ -65,7 +82,7 @@ io.on("connection", (client) => {
       return;
     }
 
-    const vel = getUpdatedVelocity(keyCode);
+    const vel = newVelocity(keyCode);
 
     if (vel) {
       state[roomName].players[client.number - 1].vel = vel;
@@ -75,7 +92,7 @@ io.on("connection", (client) => {
 
 function startGameInterval(roomName) {
   const intervalId = setInterval(() => {
-    const winner = gameLoop(state[roomName]);
+    const winner = gameContinuation(state[roomName]);
 
     if (!winner) {
       emitGameState(roomName, state[roomName]);
@@ -84,7 +101,7 @@ function startGameInterval(roomName) {
       state[roomName] = null;
       clearInterval(intervalId);
     }
-  }, 1000 / FRAME_RATE);
+  }, 1000 / frameRate);
 }
 
 function emitGameState(room, gameState) {
@@ -93,6 +110,7 @@ function emitGameState(room, gameState) {
 }
 
 function emitGameOver(room, winner) {
+  // Send this event to everyone in the room.
   io.sockets.in(room).emit("gameOver", JSON.stringify({ winner }));
 }
 
