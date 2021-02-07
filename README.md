@@ -27,7 +27,7 @@ Yes, you guessed it 😎. Use up,down,left,right arrows for controlling your sna
 
 ## This works because of...
 
-- The learnings from [MDN Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API), [Design Snake Game](https://www.geeksforgeeks.org/design-snake-game/), [Snake Game in Python](https://www.edureka.co/blog/snake-game-with-pygame/), [Socket Documentation](https://socket.io/get-started/chat)
+- The learnings from [MDN Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API), [Snake Game](https://www.youtube.com/watch?v=9TcU2C1AACw), [Socket Documentation](https://socket.io/get-started/chat)
 -
 
 
