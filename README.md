@@ -27,7 +27,7 @@ Every 90's kids misses the good old days of Nokia's Snake xensia. As a part of T
 
 ## Local Installation
 
-- Clone down the repo and up `xensia.html` on any browser
+- Clone down the repo and up `index.html` on any browser
 - `cd`into server and run `npx nodemon server.js`
 
 ## How to play..?
