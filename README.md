@@ -23,6 +23,7 @@ Every 90's kids misses the good old days of Nokia's Snake xensia. As a part of T
 - Written with uncomplicated JS (JavaScript)
 - Realtime event handling by the aid of socket.io
 - Supports on multiple browsers
+- uses Netlify & Heroku for Deployment.
 
 ## Local Installation
 
@@ -37,6 +38,7 @@ Yes, you guessed it 😎. Use up,down,left,right arrows for controlling your sna
 
 - The learnings from [MDN Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API), [Snake Game](https://www.youtube.com/watch?v=9TcU2C1AACw), [Socket Documentation](https://socket.io/get-started/chat)
 - npm, yarn, vscode, liveserver, linux
+
 
 ## Note
 Why not use React for this project?
