@@ -3,7 +3,7 @@ const BG_COLOUR = "#5B8930";
 const SNAKE_COLOUR = "#c2c2c2";
 const FOOD_COLOUR = "#e66916";
 
-const socket = io("https://desolate-anchorage-98440.herokuapp.com/");
+const socket = io("https://aqueous-badlands-52077.herokuapp.com/");
 
 //Set up callback functions for various events on the WebSocket connection
 socket.on("init", handleInit);
