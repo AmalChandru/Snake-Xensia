@@ -9,4 +9,25 @@
 <br>
 Every 90's kids misses the good old days of Nokia's Snake xensia. As a part of Tinkerhub hirehack, i am implementing a simple, realtime multiplayer snake game built upon `Javascript` and `Socket.IO.` I tried my most to keep the UI as simple as possible.
 
+## Features
+
+- Simple UI
+- Written with uncomplicated JS (JavaScript)
+- Realtime event handling by the aid of socket.io
+- Supports on multiple browsers
+
+## Local Installation
+
+- Clone down the repo and up `xensia.html` on any browser
+- `cd`into server and run `npx nodemon server.js`
+
+## How to play..?
+
+Yes, you guessed it 😎. Use up,down,left,right arrows for controlling your snake
+
+## This works because of...
+
+- The learnings from [MDN Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
+-
+
 
