@@ -9,8 +9,11 @@
 <br>
 Every 90's kids misses the good old days of Nokia's Snake xensia. As a part of Tinkerhub hirehack, i am implementing a simple, realtime multiplayer snake game built upon `Javascript` and `Socket.IO.` I tried my most to keep the UI as simple as possible.
 <br></br>
-
+<div align="center">
+ 
  ![](https://github.com/AmalChandru/Snake-Xensia/blob/main/demo.gif)
+ 
+ </div>
  
 <br></br>
 
